@@ -1,4 +1,4 @@
-/* Theme variables based on work item colors */
+ /* Theme variables based on work item colors */
 :root {
   --primary: #3498db;   /* X color */
   --secondary: #2ecc71; /* O color */
@@ -65,6 +65,32 @@ body {
   display: grid;
   place-items: center;
   padding: 16px;
+}
+
+/* Toolbar */
+.toolbar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  padding: 10px 12px;
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+}
+
+.mode-label {
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.mode-select {
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 8px 10px;
+  background: var(--bg-muted);
+  color: var(--text);
 }
 
 /* Board */
@@ -156,6 +182,75 @@ body {
   transform: translateY(0);
 }
 
+/* Chat */
+.chat {
+  margin-top: 18px;
+  width: min(92vw, 640px);
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+
+.chat-title {
+  margin: 0;
+  padding: 12px 14px;
+  background: var(--bg-muted);
+  border-bottom: 1px solid var(--border);
+  font-size: 16px;
+  color: var(--text-muted);
+}
+
+.chat-messages {
+  max-height: 180px;
+  overflow: auto;
+  padding: 10px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.chat-message {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 8px 10px;
+  border-radius: 10px;
+  background: #f7fafc;
+  border: 1px solid var(--border);
+}
+
+.chat-message--ai {
+  background: #eef7f1;
+  border-color: #d7f0de;
+}
+
+.chat-message--user {
+  background: #eef2ff;
+  border-color: #d9ddff;
+}
+
+.chat-message--system {
+  background: #fcf3e8;
+  border-color: #f2e3cd;
+}
+
+.chat-message--error {
+  background: #fde8e8;
+  border-color: #f9caca;
+}
+
+.chat-role {
+  font-weight: 700;
+  color: var(--text-muted);
+  min-width: 60px;
+}
+
+.chat-text {
+  color: var(--text);
+}
+
 /* Footer legend (decorative) */
 .footer {
   padding: 16px;
@@ -193,6 +288,10 @@ body {
   }
   .btn-reset {
     width: 100%;
+  }
+  .toolbar {
+    width: 100%;
+    justify-content: space-between;
   }
 }
 /* End of styles */
